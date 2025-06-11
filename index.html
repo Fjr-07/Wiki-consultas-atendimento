@@ -40,13 +40,18 @@
 
   <script>
     function decodeInvertedBase64(str) {
-      return atob(str.split('').reverse().join(''));
+      try {
+        return atob(str.split('').reverse().join(''));
+      } catch (e) {
+        alert("Erro ao decodificar a senha.");
+        return "";
+      }
     }
 
     function checkPassword() {
       const senhaDigitada = document.getElementById("password").value.trim();
-      const senhaOfuscada = "=QzMzEyblimT";
 
+      const senhaOfuscada = "QzMzEyblimT=";
       const senhaCorreta = decodeInvertedBase64(senhaOfuscada);
 
       if (senhaDigitada === senhaCorreta) {
@@ -54,3 +59,9 @@
       } else {
         alert("Senha incorreta!");
         console.log("Digitado:", senhaDigitada, "| Esperado:", senhaCorreta);
+      }
+    }
+  </script>
+</body>
+</html>
+
