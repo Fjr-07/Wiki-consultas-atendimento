@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -46,7 +45,7 @@
 
     function checkPassword() {
       const senhaDigitada = document.getElementById("password").value.trim();
-      const senhaOfuscada = "=QzMzEybzilmT"; // "TmlibzEyMzQ=" invertido
+      const senhaOfuscada = "=QzMzEyblimT"; // Correto: "TmlibzEyMzQ=" invertido
 
       const senhaCorreta = decodeInvertedBase64(senhaOfuscada);
 
@@ -55,8 +54,3 @@
       } else {
         alert("Senha incorreta!");
         console.log("Digitado:", senhaDigitada, "| Esperado:", senhaCorreta);
-      }
-    }
-  </script>
-</body>
-</html>
