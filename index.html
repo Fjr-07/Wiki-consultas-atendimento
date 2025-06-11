@@ -45,7 +45,7 @@
 
     function checkPassword() {
       const senhaDigitada = document.getElementById("password").value.trim();
-      const senhaOfuscada = "=QzMzEyblimT"; // Correto: "TmlibzEyMzQ=" invertido
+      const senhaOfuscada = "=QzMzEyblimT";
 
       const senhaCorreta = decodeInvertedBase64(senhaOfuscada);
 
